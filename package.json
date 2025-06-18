@@ -11,7 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@ark-ui/vue": "^5.14.0",
+    "@ark-ui/vue": "^5.14.1",
     "vue": "^3.5.13"
   },
   "devDependencies": {

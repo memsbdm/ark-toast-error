@@ -8,7 +8,21 @@ import {
   Toaster,
 } from "@ark-ui/vue/toast";
 import { toaster } from "./toaster.ts";
+import {onMounted, watchEffect} from "vue";
+
+const props = defineProps<{
+  msg: {desc: string}
+}>()
+
+onMounted(()=>{
+  toaster.create({title: 'onMounted called!', description: props.msg.desc})
+})
+
+watchEffect(()=>{
+  toaster.create({title: 'watchEffect called!', description: props.msg.desc})
+})
 </script>
+
 
 <template>
   <Toaster v-slot="toast" :toaster="toaster">

@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import Toaster from "../stories/toast/toaster.vue";
-import { toaster } from "../stories/toast/toaster.ts";
+import {ref} from "vue";
+
+const example =ref({desc: 'example'})
+let count = 0;
 </script>
 
 <template>
-  <button @click="toaster.create({ title: 'Hello', description: 'World' })">
+  <button @click="example.desc= 'Clicked ' + count++">
     Show Toast
   </button>
-  <Toaster />
+
+
+  <Toaster :msg="example"/>
 </template>
